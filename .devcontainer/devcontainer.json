@@ -1,0 +1,22 @@
+{
+  "name": "Vanilla Background Service Development Environment",
+  "dockerComposeFile": "../docker-compose-devcontainer.yml",
+  "service": "vanilla-background-service",
+  "workspaceFolder": "/tmp/vanilla-background-service/",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "Ionide.Ionide-fsharp",
+        "Ionide.Ionide-Paket",
+        "ms-azuretools.vscode-docker",
+        "yoshi389111.visible-whitespace",
+        "yzane.markdown-pdf",
+        "bierner.markdown-emoji",
+        "huntertran.auto-markdown-toc",
+        "bierner.markdown-mermaid",
+        "redhat.vscode-xml"
+      ]
+    }
+  }
+}
