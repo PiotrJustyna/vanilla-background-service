@@ -49,6 +49,7 @@ let main argv =
         services.AddHostedService<SampleFSharpWorker.Workers.Worker>() |> ignore
       )
       .UseSerilog()
+      .UseWindowsService()
       .Build()
       .Run()
   
