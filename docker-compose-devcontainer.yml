@@ -3,7 +3,8 @@ version: "3.8"
 services:
 
   vanilla-background-service:
-    image: mcr.microsoft.com/devcontainers/dotnet:6.0-bullseye
+    platform: linux/amd64
+    image: mcr.microsoft.com/devcontainers/dotnet:dev-6.0-bullseye
     working_dir: /tmp/vanilla-background-service/
     volumes:
       - ./:/tmp/vanilla-background-service/

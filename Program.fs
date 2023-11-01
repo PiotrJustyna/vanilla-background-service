@@ -1,15 +1,11 @@
 ﻿module VanillaBackgorundService.App
 
 open System
-open System.Reflection
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 open Serilog
-open Serilog.Context
-open Serilog.Configuration
 open Serilog.Exceptions
-open Serilog.Sinks.File
 open Elastic.CommonSchema.Serilog
 
 let configureLogging () =
@@ -30,11 +26,10 @@ let configureLogging () =
       .Enrich.FromLogContext()
       .Enrich.WithExceptionDetails()
       .Enrich.WithProperty("Environment", environment)
-      .WriteTo.Debug(new EcsTextFormatter())
-      .WriteTo.Console(new EcsTextFormatter())
+      .WriteTo.Console()
       .WriteTo.File(
         new EcsTextFormatter(),
-        "/tmp/vanilla-background-service/logs/log.json",
+        "./logs/log.json",
         ?rollingInterval = Some RollingInterval.Minute,
         ?retainedFileCountLimit = Some 3)
       .ReadFrom.Configuration(configuration)
