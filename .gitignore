@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 document-preview
+.DS_Store
+mermaid-filter.err
